@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-slate-950 text-slate-100 antialiased min-h-screen overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Scrollbar for premium dark-themed layout */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full border-2 border-slate-900 hover:bg-slate-700 transition-colors;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80 shadow-2xl;
+}
+
+.glass-card {
+  @apply bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 rounded-xl hover:border-brand-500/30 transition-all duration-300;
+}
+
+/* Dynamic background gradients */
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(14, 144, 235, 0.15) 0%, transparent 60%);
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at top right, rgba(14, 144, 235, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at bottom left, rgba(124, 200, 252, 0.08) 0%, transparent 50%);
+}
